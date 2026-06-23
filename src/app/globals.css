@@ -1,0 +1,28 @@
+:root {
+  --bg-color: #f8f9fb;
+  --surface-tint: #f2f4f6;
+  --text-color: #191c1e;
+  --text-secondary: #414750;
+  --primary-blue: #004976;
+  --accent-blue: #00629b;
+  --timeline-color: #c0c7d1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll globally to handle it with GSAP */
+}
+
+/* Hide scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  display: none;
+}

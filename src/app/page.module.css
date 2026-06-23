@@ -1,0 +1,306 @@
+.main {
+  position: relative;
+  width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(248, 249, 251, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e0e3e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navLogo {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  font-size: 14px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--primary-blue);
+}
+
+.landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-color) 0%, #e6f0f8 60%, var(--bg-color) 100%);
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(0, 73, 118, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 73, 118, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floatingShape {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  filter: blur(80px);
+  opacity: 0.06;
+  z-index: 1;
+}
+
+.landingContent {
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+}
+
+.landing h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.1;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 0.05em;
+  filter: drop-shadow(0 4px 12px rgba(0, 98, 155, 0.15));
+}
+
+.landingSubtext {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.landingSubtextLine {
+  display: block;
+}
+
+.gallerySection {
+  position: relative;
+  /* GSAP pin spacing will automatically handle the scroll height */
+}
+
+.gallerySticky {
+  /* Removed sticky since GSAP pin handles pinning */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.timelineContainer {
+  position: absolute;
+  left: 3rem;
+  top: 64px; 
+  bottom: 2rem;
+  width: 2px;
+  background-color: rgba(192, 199, 209, 0.3);
+  z-index: 100;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--timeline-color);
+  transform-origin: top center;
+  transform: scaleY(0);
+  box-shadow: 0 0 10px rgba(0, 98, 155, 0.5);
+}
+
+.galleryStrip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 50vw;
+  padding-right: 50vw;
+  height: 75vh;
+  will-change: transform;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 4rem, black 8rem, black 100%);
+  mask-image: linear-gradient(to right, transparent 0, transparent 4rem, black 8rem, black 100%);
+}
+
+.imagePanel {
+  position: relative;
+  height: 100%;
+  width: 30px; /* default starting width */
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--surface-tint);
+  will-change: width, box-shadow;
+}
+
+.imagePanel img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.imageText {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  min-width: 300px;
+  will-change: opacity, transform;
+}
+
+.imageText h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.imageText p {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Collage classes removed */
+
+.footer {
+  background-color: #e6f7fb;
+  padding: 4rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-top: 1px solid #e0e3e5;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.footerBrand {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--primary-blue);
+}
+
+.footerBottom {
+  text-align: center;
+  opacity: 0.8;
+  width: 100%;
+  max-width: 1200px;
+  border-top: 1px solid rgba(192, 199, 209, 0.3);
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .landing h1 {
+    font-size: 2.5rem;
+  }
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  .timelineContainer {
+    left: 1rem;
+  }
+  .imageText {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+  .imageText h2 {
+    font-size: 20px;
+  }
+  .collageImage {
+    width: 180px;
+    height: 250px;
+  }
+  .footerTop {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
