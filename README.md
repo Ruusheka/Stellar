@@ -15,8 +15,8 @@ The official webpage for the **IEEE Student Branch at SSN**, built as a modern, 
 
 ## ✨ Core Highlights & Architecture
 
-### The "Chronicle" Gallery (`/gallery`)
-The standout feature of the current build is the interactive `/gallery` route—a technically complex, highly animated photo archive. 
+### The "Chronicle" Gallery (`/gall`)
+The standout feature of the current build is the interactive `/gall` route—a technically complex, highly animated photo archive. 
 
 Rather than relying on a rigid grid or standard lightbox library, the gallery was custom-built with React and GSAP to simulate a dynamic, physical photo board:
 
