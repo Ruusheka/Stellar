@@ -1,7 +1,7 @@
 # IEEE SB SSN — Official Webpage ("Stellar")
 
-![Preview Image 1](./image.png)
-![Preview Image 2](./image2.png)
+<img src="./public/image.png" alt="Preview Image 1" width="800" />
+<img src="./public/image2.png" alt="Preview Image 2" width="800" />
 
 The official webpage for the **IEEE Student Branch at SSN**, built as a modern, high-performance web application. Designed to be a living archive of innovation, it captures the events, people, and ideas that shape the chapter through deeply immersive UI/UX patterns.
 
